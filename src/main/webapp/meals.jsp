@@ -14,5 +14,22 @@
 <h3><a href="index.html">Home</a></h3>
 <hr>
 <h2>Meals</h2>
+<hr>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Calories!</th>
+    </tr>
+    <jsp:useBean id="meals" class="ru.javawebinar.topjava.util.MealsUtil"/>
+<%--    <jsp:useBean id="meals" scope="request" type="java.util.List"/>--%>
+    <c:forEach var="meal" items="${meals}">
+        <tr>
+            <td>${meal.get().getTime()}</td>
+            <td>${meal.get().getDescription()}</td>
+            <td>${meal.get().getCalories()}</td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>
